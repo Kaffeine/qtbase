@@ -4375,7 +4375,7 @@ void Configure::buildQmake()
                 if (dictionary[ "QMAKESPEC" ] == QString("win32-g++")) {
                     stream << "QMAKESPEC = $(SOURCE_PATH)\\mkspecs\\win32-g++" << endl
                            << "EXTRA_CFLAGS = -DUNICODE -ffunction-sections" << endl
-                           << "EXTRA_CXXFLAGS = -DUNICODE -ffunction-sections" << endl
+                           << "EXTRA_CXXFLAGS = -std=c++11 -DUNICODE -ffunction-sections" << endl
                            << "EXTRA_LFLAGS = -Wl,--gc-sections" << endl
                            << "QTOBJS = qfilesystemengine_win.o \\" << endl
                            << "         qfilesystemiterator_win.o \\" << endl
