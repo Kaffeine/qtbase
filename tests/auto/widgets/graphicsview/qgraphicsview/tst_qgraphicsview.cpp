@@ -2933,9 +2933,6 @@ void tst_QGraphicsView::scrollBarRanges()
     QFETCH(ExpectedValueDescription, vmax);
     QFETCH(bool, useStyledPanel);
 
-    if (style == QLatin1String("GTK+") && useStyledPanel)
-        QSKIP("GTK + style test skipped, see QTBUG-29002");
-
     if (useStyledPanel && style == QStringLiteral("Macintosh") && platformName == QStringLiteral("cocoa"))
         QSKIP("Insignificant on OSX");
 
