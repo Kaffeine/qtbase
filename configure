@@ -2999,6 +2999,9 @@ case "$XPLATFORM" in
     *win32-g++*)
         XPLATFORM_MINGW=yes
         ;;
+    *-sailfish*)
+        XPLATFORM_SAILFISH=yes
+        ;;
     *qnx-*|*blackberry-*)
         XPLATFORM_QNX=yes
         ;;
