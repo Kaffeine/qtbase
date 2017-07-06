@@ -461,7 +461,7 @@ else
 MAKEFLAGS=%{?_smp_mflags} \
 ./configure --disable-static \
     -confirm-license \
-    -platform linux-g++ \
+    -platform linux-g++-sailfish \
     -prefix "%{_prefix}" \
     -bindir "%{_libdir}/qt5/bin" \
     -libdir "%{_libdir}" \
