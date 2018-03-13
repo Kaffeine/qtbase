@@ -801,8 +801,8 @@ void QFusionStyle::drawPrimitive(PrimitiveElement elem,
 
             } else if (checkbox->state & (State_On)) {
                 qreal penWidth = QStyleHelper::dpiScaled(1.8);
-                penWidth = qMax(penWidth , 0.18 * rect.height());
-                penWidth = qMin(penWidth , 0.30 * rect.height());
+                penWidth = qMax<qreal>(penWidth , 0.18 * rect.height());
+                penWidth = qMin<qreal>(penWidth , 0.30 * rect.height());
                 QPen checkPen = QPen(checkMarkColor, penWidth);
                 checkMarkColor.setAlpha(210);
                 painter->translate(-0.8, 0.5);
@@ -1583,8 +1583,8 @@ void QFusionStyle::drawControl(ControlElement element, const QStyleOption *optio
 
             bool ignoreCheckMark = false;
             const int checkColHOffset = windowsItemHMargin + windowsItemFrame - 1;
-            int checkcol = qMax(menuItem->rect.height() * 0.7,
-                                      qMax(menuItem->maxIconWidth * 1.0, dpiScaled(17))); // icon checkbox's highlihgt column width
+            int checkcol = qMax<qreal>(menuItem->rect.height() * 0.7,
+                                      qMax<qreal>(menuItem->maxIconWidth, dpiScaled(17))); // icon checkbox's highlight column width
             if (
 #if QT_CONFIG(combobox)
                 qobject_cast<const QComboBox*>(widget) ||
