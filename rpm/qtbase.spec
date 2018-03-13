@@ -497,7 +497,7 @@ MAKEFLAGS=%{?_smp_mflags} \
     -no-strip \
     -no-separate-debug-info \
     -verbose \
-    -no-gtkstyle \
+    -no-gtk \
     -opengl es2 \
     -no-opengles3 \
     -no-openvg \
