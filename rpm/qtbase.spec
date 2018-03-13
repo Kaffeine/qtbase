@@ -686,6 +686,8 @@ ln -s %{_sysconfdir}/xdg/qtchooser/5.conf %{buildroot}%{_sysconfdir}/xdg/qtchoos
 %defattr(-,root,root,-)
 %dir %{_libdir}/qt5/plugins/imageformats/
 %dir %{_libdir}/qt5/plugins/platforminputcontexts/
+%dir %{_libdir}/qt5/plugins/platformthemes/
+%{_libdir}/qt5/plugins/platformthemes/*
 %{_libdir}/libQt5Gui.so.*
 
 
