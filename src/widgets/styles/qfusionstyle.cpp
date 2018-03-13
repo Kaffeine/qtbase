@@ -1562,8 +1562,8 @@ void QFusionStyle::drawControl(ControlElement element, const QStyleOption *optio
 
             bool ignoreCheckMark = false;
             const int checkColHOffset = windowsItemHMargin + windowsItemFrame - 1;
-            int checkcol = qMax(menuItem->rect.height() * 0.79,
-                                      qMax(menuItem->maxIconWidth * 1.0, dpiScaled(21))); // icon checkbox's highlihgt column width
+            int checkcol = qMax<qreal>(menuItem->rect.height() * 0.79,
+                                       qMax<qreal>(menuItem->maxIconWidth, dpiScaled(21))); // icon checkbox's highlight column width
             if (
 #if QT_CONFIG(combobox)
                 qobject_cast<const QComboBox*>(widget) ||
