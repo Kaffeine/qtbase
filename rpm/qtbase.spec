@@ -402,6 +402,7 @@ applications that use QtWidgets
 %package qtplatformsupport-devel
 Summary:    Development files for QtPlatformSupport
 Requires: %{name}-qtwidgets = %{version}-%{release}
+Requires: %{name}-qtedidsupport-devel = %{version}-%{release}
 Requires: %{name}-qteventdispatchersupport-devel = %{version}-%{release}
 Requires: %{name}-qtdevicediscoverysupport-devel = %{version}-%{release}
 Requires: %{name}-qtfbsupport-devel = %{version}-%{release}
@@ -416,6 +417,13 @@ Requires: %{name}-qtaccessibilitysupport-devel = %{version}-%{release}
 %description qtplatformsupport-devel
 This package contains the files necessary to develop
 applications that use QtPlatformSupport
+
+%package qtedidsupport-devel
+Summary: Development files for QtPlatformSupport/Edid
+
+%description qtedidsupport-devel
+This package contains the files necessary to develop
+applications that use QtPlatformSupport Edid library
 
 %package qteventdispatchersupport-devel
 Summary: Development files for QtPlatformSupport/EventDispatcher
@@ -893,6 +901,14 @@ ln -s %{_sysconfdir}/xdg/qtchooser/5.conf %{buildroot}%{_sysconfdir}/xdg/qtchoos
 %{_datadir}/qt5/mkspecs/modules/qt_lib_widgets_private.pri
 
 # Platform support libraries
+%files qtedidsupport-devel
+%defattr(-,root,root,-)
+%{_includedir}/qt5/QtEdidSupport/
+%{_libdir}/libQt5EdidSupport.prl
+%{_libdir}/libQt5EdidSupport.a
+#%{_libdir}/pkgconfig/Qt5EdidSupport.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_edid_support_private.pri
+
 %files qteventdispatchersupport-devel
 %defattr(-,root,root,-)
 %{_includedir}/qt5/QtEventDispatcherSupport/
