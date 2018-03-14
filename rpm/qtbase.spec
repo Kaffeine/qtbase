@@ -639,7 +639,6 @@ ln -s %{_sysconfdir}/xdg/qtchooser/5.conf %{buildroot}%{_sysconfdir}/xdg/qtchoos
 %{_libdir}/qt5/bin/qmake
 %{_datadir}/qt5/mkspecs/aix-*/
 %{_datadir}/qt5/mkspecs/android-clang/*
-%{_datadir}/qt5/mkspecs/blackberry*/
 %{_datadir}/qt5/mkspecs/common/
 %{_datadir}/qt5/mkspecs/cygwin-*/
 %{_datadir}/qt5/mkspecs/darwin-*/
@@ -649,7 +648,6 @@ ln -s %{_sysconfdir}/xdg/qtchooser/5.conf %{buildroot}%{_sysconfdir}/xdg/qtchoos
 %{_datadir}/qt5/mkspecs/hpux-*
 %{_datadir}/qt5/mkspecs/hpuxi-*
 %{_datadir}/qt5/mkspecs/hurd-g++/
-%{_datadir}/qt5/mkspecs/irix-*/
 %{_datadir}/qt5/mkspecs/linux-*/
 %{_datadir}/qt5/mkspecs/lynxos-*/
 %{_datadir}/qt5/mkspecs/macx-*/
@@ -658,20 +656,13 @@ ln -s %{_sysconfdir}/xdg/qtchooser/5.conf %{buildroot}%{_sysconfdir}/xdg/qtchoos
 %{_datadir}/qt5/mkspecs/qconfig.pri
 %{_datadir}/qt5/mkspecs/qmodule.pri
 %{_datadir}/qt5/mkspecs/qnx*/
-%{_datadir}/qt5/mkspecs/sco-*/
 %{_datadir}/qt5/mkspecs/solaris-*/
-%{_datadir}/qt5/mkspecs/tru64-*/
-%{_datadir}/qt5/mkspecs/unixware-*/
 %{_datadir}/qt5/mkspecs/unsupported/
 %{_datadir}/qt5/mkspecs/win32-g++/
 %{_datadir}/qt5/mkspecs/win32-icc/
-%{_datadir}/qt5/mkspecs/win32-msvc20*/
-%{_datadir}/qt5/mkspecs/wince*/
-%{_datadir}/qt5/mkspecs/winphone*/
 %{_datadir}/qt5/mkspecs/winrt*/
 %{_datadir}/qt5/mkspecs/devices/
 %{_datadir}/qt5/mkspecs/qdevice.pri
-%{_datadir}/qt5/mkspecs/qfeatures.pri
 %config(noreplace) %{_sysconfdir}/rpm/macros.qt5-default
 
 %files qtdbus
