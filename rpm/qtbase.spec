@@ -712,6 +712,7 @@ ln -s %{_sysconfdir}/xdg/qtchooser/5.conf %{buildroot}%{_sysconfdir}/xdg/qtchoos
 %{_libdir}/qt5/bin/uic
 %{_libdir}/qt5/bin/qlalr
 %{_libdir}/qt5/bin/fixqt4headers.pl
+%{_libdir}/qt5/bin/vkgen
 #%{_libdir}/qt5/bin/qdoc
 %{_docdir}/qt5/*
 
