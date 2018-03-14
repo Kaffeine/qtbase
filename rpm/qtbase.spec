@@ -386,10 +386,91 @@ applications that use QtWidgets
 
 %package qtplatformsupport-devel
 Summary:    Development files for QtPlatformSupport
+Requires: %{name}-qtwidgets = %{version}-%{release}
+Requires: %{name}-qteventdispatchersupport-devel = %{version}-%{release}
+Requires: %{name}-qtdevicediscoverysupport-devel = %{version}-%{release}
+Requires: %{name}-qtfbsupport-devel = %{version}-%{release}
+Requires: %{name}-qtthemesupport-devel = %{version}-%{release}
+Requires: %{name}-qtfontdatabasesupport-devel = %{version}-%{release}
+Requires: %{name}-qtinputsupport-devel = %{version}-%{release}
+Requires: %{name}-qtservicesupport-devel = %{version}-%{release}
+Requires: %{name}-qtplatformcompositorsupport-devel = %{version}-%{release}
+Requires: %{name}-qteglsupport-devel = %{version}-%{release}
+Requires: %{name}-qtaccessibilitysupport-devel = %{version}-%{release}
 
 %description qtplatformsupport-devel
 This package contains the files necessary to develop
 applications that use QtPlatformSupport
+
+%package qteventdispatchersupport-devel
+Summary: Development files for QtPlatformSupport/EventDispatcher
+
+%description qteventdispatchersupport-devel
+This package contains the files necessary to develop
+applications that use QtPlatformSupport EventDispatcher library
+
+%package qtdevicediscoverysupport-devel
+Summary: Development files for QtPlatformSupport/DeviceDiscovery
+
+%description qtdevicediscoverysupport-devel
+This package contains the files necessary to develop
+applications that use QtPlatformSupport DeviceDiscovery library
+
+%package qtfbsupport-devel
+Summary: Development files for QtPlatformSupport/Fb
+
+%description qtfbsupport-devel
+This package contains the files necessary to develop
+applications that use QtPlatformSupport Fb library
+
+%package qtthemesupport-devel
+Summary: Development files for QtPlatformSupport/Theme
+
+%description qtthemesupport-devel
+This package contains the files necessary to develop
+applications that use QtPlatformSupport Theme library
+
+%package qtfontdatabasesupport-devel
+Summary: Development files for QtPlatformSupport/FontDatabase
+
+%description qtfontdatabasesupport-devel
+This package contains the files necessary to develop
+applications that use QtPlatformSupport FontDatabase library
+
+%package qtinputsupport-devel
+Summary: Development files for QtPlatformSupport/Input
+
+%description qtinputsupport-devel
+This package contains the files necessary to develop
+applications that use QtPlatformSupport Input library
+
+%package qtservicesupport-devel
+Summary: Development files for QtPlatformSupport/Service
+
+%description qtservicesupport-devel
+This package contains the files necessary to develop
+applications that use QtPlatformSupport Service library
+
+%package qtplatformcompositorsupport-devel
+Summary: Development files for QtPlatformSupport/PlatformCompositor
+
+%description qtplatformcompositorsupport-devel
+This package contains the files necessary to develop
+applications that use QtPlatformSupport PlatformCompositor library
+
+%package qteglsupport-devel
+Summary: Development files for QtPlatformSupport/Egl
+
+%description qteglsupport-devel
+This package contains the files necessary to develop
+applications that use QtPlatformSupport Egl library
+
+%package qtaccessibilitysupport-devel
+Summary: Development files for QtPlatformSupport/Accessibility
+
+%description qtaccessibilitysupport-devel
+This package contains the files necessary to develop
+applications that use QtPlatformSupport Accessibility library
 
 %package qtbootstrap-devel
 Summary:    Development files for QtBootstrap
@@ -796,13 +877,86 @@ ln -s %{_sysconfdir}/xdg/qtchooser/5.conf %{buildroot}%{_sysconfdir}/xdg/qtchoos
 %{_datadir}/qt5/mkspecs/modules/qt_lib_widgets.pri
 %{_datadir}/qt5/mkspecs/modules/qt_lib_widgets_private.pri
 
-%files qtplatformsupport-devel
+# Platform support libraries
+%files qteventdispatchersupport-devel
 %defattr(-,root,root,-)
-%{_includedir}/qt5/QtPlatformSupport/
-%{_libdir}/libQt5PlatformSupport.prl
-%{_libdir}/libQt5PlatformSupport.a
-#%{_libdir}/pkgconfig/Qt5PlatformSupport.pc
-%{_datadir}/qt5/mkspecs/modules/qt_lib_platformsupport_private.pri
+%{_includedir}/qt5/QtEventDispatcherSupport/
+%{_libdir}/libQt5EventDispatcherSupport.prl
+%{_libdir}/libQt5EventDispatcherSupport.a
+#%{_libdir}/pkgconfig/Qt5EventDispatcherSupport.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri
+
+%files qtdevicediscoverysupport-devel
+%defattr(-,root,root,-)
+%{_includedir}/qt5/QtDeviceDiscoverySupport/
+%{_libdir}/libQt5DeviceDiscoverySupport.prl
+%{_libdir}/libQt5DeviceDiscoverySupport.a
+#%{_libdir}/pkgconfig/Qt5DeviceDiscoverySupport.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_devicediscovery_support_private.pri
+
+%files qtfbsupport-devel
+%defattr(-,root,root,-)
+%{_includedir}/qt5/QtFbSupport/
+%{_libdir}/libQt5FbSupport.prl
+%{_libdir}/libQt5FbSupport.a
+#%{_libdir}/pkgconfig/Qt5FbSupport.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_fb_support_private.pri
+
+%files qtthemesupport-devel
+%defattr(-,root,root,-)
+%{_includedir}/qt5/QtThemeSupport/
+%{_libdir}/libQt5ThemeSupport.prl
+%{_libdir}/libQt5ThemeSupport.a
+#%{_libdir}/pkgconfig/Qt5ThemeSupport.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_theme_support_private.pri
+
+%files qtfontdatabasesupport-devel
+%defattr(-,root,root,-)
+%{_includedir}/qt5/QtFontDatabaseSupport/
+%{_libdir}/libQt5FontDatabaseSupport.prl
+%{_libdir}/libQt5FontDatabaseSupport.a
+#%{_libdir}/pkgconfig/Qt5FontDatabaseSupport.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_fontdatabase_support_private.pri
+
+%files qtinputsupport-devel
+%defattr(-,root,root,-)
+%{_includedir}/qt5/QtInputSupport/
+%{_libdir}/libQt5InputSupport.prl
+%{_libdir}/libQt5InputSupport.a
+#%{_libdir}/pkgconfig/Qt5InputSupport.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_input_support_private.pri
+
+%files qtservicesupport-devel
+%defattr(-,root,root,-)
+%{_includedir}/qt5/QtServiceSupport/
+%{_libdir}/libQt5ServiceSupport.prl
+%{_libdir}/libQt5ServiceSupport.a
+#%{_libdir}/pkgconfig/Qt5ServiceSupport.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_service_support_private.pri
+
+%files qtplatformcompositorsupport-devel
+%defattr(-,root,root,-)
+%{_includedir}/qt5/QtPlatformCompositorSupport/
+%{_libdir}/libQt5PlatformCompositorSupport.prl
+%{_libdir}/libQt5PlatformCompositorSupport.a
+#%{_libdir}/pkgconfig/Qt5PlatformCompositorSupport.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri
+
+%files qteglsupport-devel
+%defattr(-,root,root,-)
+%{_includedir}/qt5/QtEglSupport/
+%{_libdir}/libQt5EglSupport.prl
+%{_libdir}/libQt5EglSupport.a
+#%{_libdir}/pkgconfig/Qt5EglSupport.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_egl_support_private.pri
+
+%files qtaccessibilitysupport-devel
+%defattr(-,root,root,-)
+%{_includedir}/qt5/QtAccessibilitySupport/
+%{_libdir}/libQt5AccessibilitySupport.prl
+%{_libdir}/libQt5AccessibilitySupport.a
+#%{_libdir}/pkgconfig/Qt5AccessibilitySupport.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri
 
 %files qtbootstrap-devel
 %defattr(-,root,root,-)
