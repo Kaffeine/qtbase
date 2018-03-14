@@ -878,13 +878,13 @@ ln -s %{_sysconfdir}/xdg/qtchooser/5.conf %{buildroot}%{_sysconfdir}/xdg/qtchoos
 
 %files plugin-platform-eglfs
 %defattr(-,root,root,-)
-%{_libdir}/libQt5EglDeviceIntegration.so*
-%{_libdir}/libQt5EglDeviceIntegration.prl
+%{_libdir}/libQt5EglFSDeviceIntegration.so*
+%{_libdir}/libQt5EglFSDeviceIntegration.prl
 %{_libdir}/qt5/plugins/platforms/libqeglfs.so
 %if %{with X11}
 %{_libdir}/qt5/plugins/egldeviceintegrations/libqeglfs-x11-integration.so
 %endif
-%{_datadir}/qt5/mkspecs/modules/qt_lib_eglfs_device_lib_private.pri
+%{_datadir}/qt5/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri
 
 %files plugin-platform-minimalegl
 %defattr(-,root,root,-)
