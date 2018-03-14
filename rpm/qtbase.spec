@@ -193,6 +193,13 @@ Requires:   %{name}-qtcore = %{version}-%{release}
 %description plugin-platform-linuxfb
 This package contains the linuxfb platform plugin for Qt
 
+%package plugin-platform-vnc
+Summary:    VNC client platform plugin
+Requires:   %{name}-qtcore = %{version}-%{release}
+
+%description plugin-platform-vnc
+This package contains the VNC client plugin for Qt
+
 %package plugin-printsupport-cups
 Summary:    CUPS print support plugin
 Requires:   %{name}-qtcore = %{version}-%{release}
@@ -891,6 +898,10 @@ ln -s %{_sysconfdir}/xdg/qtchooser/5.conf %{buildroot}%{_sysconfdir}/xdg/qtchoos
 %files plugin-platform-linuxfb
 %defattr(-,root,root,-)
 %{_libdir}/qt5/plugins/platforms/libqlinuxfb.so
+
+%files plugin-platform-vnc
+%defattr(-,root,root,-)
+%{_libdir}/qt5/plugins/platforms/libqvnc.so
 
 %files plugin-printsupport-cups
 %defattr(-,root,root,-)
