@@ -1,8 +1,12 @@
+message("toolchain: loaded, cxx: " $$QMAKE_CXX)
 
 defineReplace(qtMakeExpand) {
+    message("toolchain::qtMakeExpand: " $$1)
     out = "$$1"
     for(ever) {
         m = $$replace(out, ".*\\$\\(EXPORT_([^)]+)\\).*", \\1)
+        equals(m, $$out): message("toolchain::qtMakeExpand: out:" $$m)
+
         equals(m, $$out): \
             return($$out)
         out = $$replace(out, "\\$\\(EXPORT_$$m\\)", $$eval($$m))
@@ -30,7 +34,10 @@ cross_compile:host_build: \
 else: \
     target_prefix = QMAKE_CXX
 
+message("toolchain: target_prefix: " $$target_prefix)
+
 isEmpty($${target_prefix}.INCDIRS) {
+    message("toolchain: in target_prefix.INCDIRS empty branch")
     #
     # Get default include and library paths from compiler
     #
@@ -40,6 +47,7 @@ isEmpty($${target_prefix}.INCDIRS) {
             cmd_prefix = "set LC_ALL=C&"
         else: \
             cmd_prefix = "LC_ALL=C"
+        message("toolchain: cmd_prefix: " $$cmd_prefix)
 
         cxx_flags = $$QMAKE_CXXFLAGS
 
@@ -66,6 +74,11 @@ isEmpty($${target_prefix}.INCDIRS) {
             # Just preprocess, might not pick up library paths
             cxx_flags += -E -v
 
+        message("toolchain: QMAKE_CXX: " $$QMAKE_CXX)
+        message("toolchain: cxx_flags: " $$cxx_flags)
+        message("toolchain: cmd_suffix: " $$cmd_suffix)
+        
+        message("toolchain: $$cmd_prefix $$QMAKE_CXX $$qtMakeExpand($$cxx_flags) -xc++ - 2>&1 $$cmd_suffix")
         output = $$system("$$cmd_prefix $$QMAKE_CXX $$qtMakeExpand($$cxx_flags) -xc++ - 2>&1 $$cmd_suffix", lines, ec)
         !equals(ec, 0): qtCompilerErrror($$QMAKE_CXX, $$output)
 
