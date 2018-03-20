@@ -16,7 +16,7 @@ Summary:    Cross-platform application and UI framework
 Version:    5.6.3
 Release:    1%{?dist}
 Group:      Qt/Qt
-License:    LGPLv2.1 with exception or GPLv3
+License:    LGPLv3 with exception or GPLv3
 URL:        https://www.qt.io/
 Source0:    %{name}-%{version}.tar.bz2
 Source1:    macros.qt5-default
