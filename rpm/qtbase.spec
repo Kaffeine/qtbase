@@ -569,7 +569,7 @@ MAKEFLAGS=%{?_smp_mflags} \
     -translationdir "%{_datadir}/qt5/translations" \
     -sysconfdir "%{_sysconfdir}/xdg" \
     -examplesdir "%{_libdir}/qt5/examples" \
-    -archdatadir "%{_datadir}/qt5" \
+    -archdatadir "%{_libdir}/qt5" \
     -testsdir "%{_libdir}/qt5/tests" \
     -qmldir "%{_libdir}/qt5/qml" \
     -libexecdir "%{_libdir}/qt5/libexec" \
