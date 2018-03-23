@@ -19,7 +19,6 @@ Group:      Qt/Qt
 License:    LGPLv3 with exception or GPLv3
 URL:        https://www.qt.io/
 Source0:    %{name}-%{version}.tar.bz2
-Source1:    macros.qt5-default
 Source100:  qtbase-rpmlintrc
 BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(dbus-1)
@@ -96,6 +95,7 @@ that use the QtCore
 %package qmake
 Summary:    QMake
 Requires:   qtchooser
+Requires:   qt5-rpm-macros
 
 %description qmake
 This package contains qmake
@@ -642,10 +642,6 @@ mkdir -p %{buildroot}%{_libdir}/qt5/plugins/
 mkdir -p %{buildroot}%{_libdir}/qt5/imports/
 mkdir -p %{buildroot}%{_libdir}/qt5/translations/
 mkdir -p %{buildroot}%{_libdir}/qt5/examples/
-#
-# Install qmake rpm macros
-install -D -p -m 0644 %{_sourcedir}/macros.qt5-default \
-%{buildroot}/%{_sysconfdir}/rpm/macros.qt5-default
 
 # Add a configuration link for qtchooser - the 5.conf is installed by qtchooser
 mkdir -p %{buildroot}/etc/xdg/qtchooser
@@ -759,7 +755,6 @@ ln -s %{_sysconfdir}/xdg/qtchooser/5.conf %{buildroot}%{_sysconfdir}/xdg/qtchoos
 %{_datadir}/qt5/mkspecs/unsupported/
 %{_datadir}/qt5/mkspecs/win32-*/
 %{_datadir}/qt5/mkspecs/winrt-*/
-%config(noreplace) %{_sysconfdir}/rpm/macros.qt5-default
 
 %files qtdbus
 %defattr(-,root,root,-)
