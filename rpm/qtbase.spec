@@ -11,14 +11,14 @@
 # make sense. This allows to update spec contents easily as snapshots
 # evolve.
 
-Name:       qt5
+Name:       qt%{_qt5_version}
 Summary:    Cross-platform application and UI framework
 Version:    5.6.3
 Release:    1%{?dist}
 Group:      Qt/Qt
 License:    LGPLv3 with exception or GPLv3
 URL:        https://www.qt.io/
-Source0:    %{name}-%{version}.tar.bz2
+Source0:    qt-%{version}.tar.bz2
 Source100:  qtbase-rpmlintrc
 BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(dbus-1)
@@ -69,14 +69,14 @@ Summary:    The QtCore library
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 Requires:   xdg-utils
-#TODO: Remove these conflicts after we are pass next stop release.
-Conflicts:  qt5-qtdbus < %{version}
-Conflicts:  qt5-qtgui < %{version}
-Conflicts:  qt5-qtnetwork < %{version}
-Conflicts:  qt5-qtopengl < %{version}
-Conflicts:  qt5-qtsql < %{version}
-Conflicts:  qt5-qtwidgets < %{version}
-Conflicts:  qt5-qtconcurrent < %{version}
+
+Conflicts:  qt%{_qt5_version}-qtdbus < %{version}
+Conflicts:  qt%{_qt5_version}-qtgui < %{version}
+Conflicts:  qt%{_qt5_version}-qtnetwork < %{version}
+Conflicts:  qt%{_qt5_version}-qtopengl < %{version}
+Conflicts:  qt%{_qt5_version}-qtsql < %{version}
+Conflicts:  qt%{_qt5_version}-qtwidgets < %{version}
+Conflicts:  qt%{_qt5_version}-qtconcurrent < %{version}
 
 %description qtcore
 This package contains the QtCore library
@@ -533,7 +533,7 @@ applications that use QtConcurrent
 ##### Build section
 
 %prep
-%setup -q -n qt5-%{version}
+%setup -q -n qt-%{version}
 
 %build
 touch .git
