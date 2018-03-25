@@ -529,21 +529,6 @@ Requires:   %{name}-qtconcurrent = %{version}-%{release}
 This package contains the files necessary to develop
 applications that use QtConcurrent
 
-%package -n qt5-default
-Summary:    Qt5 development defaults package
-Group:      Development/Libraries
-Requires:   qtchooser
-Provides:   qt-default
-Conflicts:   qt4-default
-
-%description -n qt5-default
-Qt is a cross-platform application and UI framework. Using Qt, you can write
-web-enabled applications once and deploy them across desktop, mobile and
-embedded operating systems without rewriting the source code.
-
-This package contains the Qt5 development defaults package
-
-
 
 ##### Build section
 
@@ -644,10 +629,6 @@ mkdir -p %{buildroot}%{_qt5_plugindir}/
 mkdir -p %{buildroot}%{_qt5_importdir}/
 mkdir -p %{buildroot}%{_qt5_translationdir}/
 mkdir -p %{buildroot}%{_qt5_examplesdir}/
-
-# Add a configuration link for qtchooser - the 5.conf is installed by qtchooser
-mkdir -p %{buildroot}/etc/xdg/qtchooser
-ln -s %{_qt5_sysconfdir}/qtchooser/5.conf %{buildroot}%{_qt5_sysconfdir}/qtchooser/default.conf
 
 #
 %fdupes %{buildroot}/%{_libdir}
@@ -1088,9 +1069,5 @@ ln -s %{_qt5_sysconfdir}/qtchooser/5.conf %{buildroot}%{_qt5_sysconfdir}/qtchoos
 %files plugin-generic-tuiotouch
 %defattr(-,root,root,-)
 %{_qt5_plugindir}/generic/libqtuiotouchplugin.so
-
-%files -n qt5-default
-%defattr(-,root,root,-)
-%{_sysconfdir}/xdg/qtchooser/default.conf
 
 #### No changelog section, separate $pkg.changes contains the history
